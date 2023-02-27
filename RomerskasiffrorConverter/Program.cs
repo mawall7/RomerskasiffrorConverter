@@ -16,8 +16,8 @@ namespace RomerskasiffrorConverter
 
 
             //Handler newHandler = new Handler();
-            Handler newHandler = Handler.Createhandlerclass();
-            newHandler.CreateNewDict();
+            RomanIntConverter newConverter = new RomanIntConverter();
+            newConverter.CreateNewDict();
             List<int> numbers = new List<int>();
            
             Console.Write("Romerska siffror-Converter 2023\nSkriv ett romerskt tal: ");
@@ -30,7 +30,7 @@ namespace RomerskasiffrorConverter
             }
 
             
-            foreach (int item in AddKeys(keys, newHandler))
+            foreach (int item in AddKeys(keys, newConverter))
             {
                
                 numbers.Add(item);
@@ -40,7 +40,7 @@ namespace RomerskasiffrorConverter
                 
              for (int i = numbers.Count - 1; i >= 0; i--)
              {
-                int? Compared = Comparedresults(i, i - 1, numbers);
+                int? Compared = Comparedresults(i, i - 1, numbers); 
                 if (Compared != null)
                 {
                     results = results + Compared;
@@ -68,7 +68,7 @@ namespace RomerskasiffrorConverter
             return result;
             
         }
-        public static IEnumerable AddKeys(string k, Handler h)
+        public static IEnumerable AddKeys(string k, RomanIntConverter h)
         {
             //h.CreateNewDict();
             for (int i = 0; i < k.Length; i++)

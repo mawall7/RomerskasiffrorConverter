@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RomerskasiffrorConverter
 {
-   public class Handler
+   public class RomanIntConverter
     {
         private Dictionary<string, int> RomannumbersDict { get; set; }
         public void GetDictValue(string key, Dictionary<string, int> dict)
@@ -12,10 +12,7 @@ namespace RomerskasiffrorConverter
             Console.WriteLine(dict[key]);
         }
 
-        public static Handler Createhandlerclass()
-        {
-            return new Handler();
-        }
+        
 
         public void CreateNewDict() 
         {
