@@ -28,7 +28,7 @@ namespace RomerskasiffrorConverter
             Console.Write("Romerska siffror-Converter 2023\nSkriv ett romerskt tal: ");
             
             //Readkey
-            while (string.IsNullOrWhiteSpace(keys) || !keys.IsKeysOfDict(newConverter.RomannumbersDict)) //to do Extensionmetod på string för att bara tillåta ivxcm 
+            while (string.IsNullOrWhiteSpace(keys) || !keys.IsKeysOfDict(newConverter.RomannumbersDict)) 
             {
                keys = Console.ReadLine().ToUpper();
                  
