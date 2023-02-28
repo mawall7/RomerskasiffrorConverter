@@ -30,8 +30,8 @@ namespace RomerskasiffrorConverter
             }
 
 
-            AddKeys(keys);
-
+            newConverter.AddKeys(keys);
+            numbers = newConverter.GetNumbers();
             
            
 
@@ -76,16 +76,16 @@ namespace RomerskasiffrorConverter
             return results;
         }
 
-        public static IEnumerable AddKeys(string k, RomanIntConverter h)
-        {
-            //h.CreateNewDict();
-            for (int i = 0; i < k.Length; i++)
-            {
-                yield return h.GetResultValue(k[i].ToString());
+        //public static IEnumerable AddKeys(string k, RomanIntConverter h)
+        //{
+        //    //h.CreateNewDict();
+        //    for (int i = 0; i < k.Length; i++)
+        //    {
+        //        yield return h.GetResultValue(k[i].ToString());
 
-            }
+        //    }
 
-        }
+        //}
     }
 
 

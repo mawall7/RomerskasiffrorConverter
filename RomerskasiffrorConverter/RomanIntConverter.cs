@@ -28,17 +28,19 @@ namespace RomerskasiffrorConverter
             };
         }
 
+        public List<int> GetNumbers() => Numbers;
        
         public int GetResultValue(string s)
         {
             return RomannumbersDict[s];
         }
 
-        private static void AddKeys(string keys)
+        public void AddKeys(string keys)
         {
             foreach (int item in keys)
             {
 
+                GetResultValue(item.ToString());
                 Numbers.Add(item);
 
             }
