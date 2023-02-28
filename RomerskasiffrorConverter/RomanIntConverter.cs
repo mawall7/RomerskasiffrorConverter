@@ -7,15 +7,12 @@ namespace RomerskasiffrorConverter
    public class RomanIntConverter
     {
         private Dictionary<string, int> RomannumbersDict { get; set; }
-        private List<int> Numbers { get; }
-        
-        public void GetDictValue(string key, Dictionary<string, int> dict)
-        {
-            Console.WriteLine(dict[key]);
-        }
+        public List<int> Numbers { get; set; }
 
-        public void CreateNewDict() //to do move to konstruktor
+        public RomanIntConverter()
         {
+            Numbers = new List<int>();
+
             RomannumbersDict = new Dictionary<string, int>()
             {
                 {"I",1 },
@@ -27,6 +24,11 @@ namespace RomerskasiffrorConverter
                 {"M", 1000 }
             };
         }
+        
+        public void GetDictValue(string key, Dictionary<string, int> dict)
+        {
+            Console.WriteLine(dict[key]);
+        }
 
         public List<int> GetNumbers() => Numbers;
        
@@ -37,11 +39,12 @@ namespace RomerskasiffrorConverter
 
         public void AddKeys(string keys)
         {
-            foreach (int item in keys)
+            int value;
+            foreach(char item in keys)
             {
 
-                GetResultValue(item.ToString());
-                Numbers.Add(item);
+                value = GetResultValue(item.ToString());
+                Numbers.Add(value);
 
             }
 
