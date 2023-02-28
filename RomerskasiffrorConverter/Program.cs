@@ -14,10 +14,8 @@ namespace RomerskasiffrorConverter
       
         public static void Main(string[] args)
         {
-            int? results = 0;
+            
             string keys = null;
-
-            Dictionary<string, int> myDict = new Dictionary<string, int> { { "A", 1 }, { "B", 2 }, { "D", 2 } };
 
 
             //Handler newHandler = new Handler();
@@ -46,47 +44,7 @@ namespace RomerskasiffrorConverter
 
         
 
-        //private static int? Comparedresults(int i, int v, List<int>numbers)
-        //{
-        //    int? result;
-        //    int y = 0; 
-        //    if(v>=0) y = numbers[v];
-        //    int x = numbers[i]; 
-        //    result = y > x ? x + y :  x - y;
-        //    if (x == y) result = null;
-        //    return result;
-            
-        //}
-
-
-        //public static int Getresultfromints(List<int> numbers)
-        //{
-        //    int results = 0;
-        //    for (int i = numbers.Count - 1; i >= 0; i--)
-        //    {
-        //        int? Compared = Comparedresults(i, i - 1, numbers);
-        //        if (Compared != null)
-        //        {
-        //            results = results + (int)Compared;
-        //            --i;
-        //        }
-        //        else if (Compared == null)
-        //            results = results + numbers[i];
-
-        //    }
-        //    return results;
-        //}
-
-        //public static IEnumerable AddKeys(string k, RomanIntConverter h)
-        //{
-        //    //h.CreateNewDict();
-        //    for (int i = 0; i < k.Length; i++)
-        //    {
-        //        yield return h.GetResultValue(k[i].ToString());
-
-        //    }
-
-        //}
+        
     }
 
 
