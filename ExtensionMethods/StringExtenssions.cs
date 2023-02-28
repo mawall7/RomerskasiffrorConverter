@@ -6,20 +6,17 @@ namespace ExtensionMethods
 {
     public static class StringExtensions
     {
-        public static bool IsNotInDictOrNull(this string s, Dictionary<string, int> d)
+        public static bool IsKeysOfDict(this string s, Dictionary<string, int> d)
         {
-            bool result = false;
-            if (s != null)
-            {
-
+            bool result = true;
+            
                 foreach (char item in s)
                 {
                     if (!d.ContainsKey(item.ToString()))
-                        result = true;
+                        result = false;
 
                 }
-            }
-            else if (s == null) result = true;
+            
             return result;
         }
     }
