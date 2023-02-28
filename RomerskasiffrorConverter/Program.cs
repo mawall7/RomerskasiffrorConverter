@@ -23,39 +23,27 @@ namespace RomerskasiffrorConverter
             Console.Write("Romerska siffror-Converter 2023\nSkriv ett romerskt tal: ");
             
             //Readkey
-            while (string.IsNullOrWhiteSpace(keys))
+            while (string.IsNullOrWhiteSpace(keys)) //to do Extensionmetod på string för att bara tillåta ivxcm 
             {
                 keys = Console.ReadLine().ToUpper();
                 
             }
 
+
+            AddKeys(keys);
+
             
-            foreach (int item in AddKeys(keys, newConverter))
-            {
-               
-                numbers.Add(item);
-                                
-            }
-            
+           
+
+            int result = Getresultfromints(numbers);
                 
-             for (int i = numbers.Count - 1; i >= 0; i--)
-             {
-                int? Compared = Comparedresults(i, i - 1, numbers); 
-                if (Compared != null)
-                {
-                    results = results + Compared;
-                    --i;
-                }
-                else if (Compared == null)
-                    results = results + numbers[i];
-
-            }
-
-            Console.WriteLine(results);
+            Console.WriteLine(result);
             
             
             Console.ReadKey();
         }
+
+        
 
         private static int? Comparedresults(int i, int v, List<int>numbers)
         {
@@ -68,6 +56,26 @@ namespace RomerskasiffrorConverter
             return result;
             
         }
+        
+
+        public static int Getresultfromints(List<int> numbers)
+        {
+            int results = 0;
+            for (int i = numbers.Count - 1; i >= 0; i--)
+            {
+                int? Compared = Comparedresults(i, i - 1, numbers);
+                if (Compared != null)
+                {
+                    results = results + (int)Compared;
+                    --i;
+                }
+                else if (Compared == null)
+                    results = results + numbers[i];
+
+            }
+            return results;
+        }
+
         public static IEnumerable AddKeys(string k, RomanIntConverter h)
         {
             //h.CreateNewDict();
@@ -76,7 +84,7 @@ namespace RomerskasiffrorConverter
                 yield return h.GetResultValue(k[i].ToString());
 
             }
-          
+
         }
     }
 
