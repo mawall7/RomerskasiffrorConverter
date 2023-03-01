@@ -4,10 +4,16 @@ using System.Text;
 
 namespace RomerskasiffrorConverter
 {
-   public class RomanIntConverter  
+    interface IRomanIntConverter
     {
-        public Dictionary<string, int> RomannumbersDict { get; }
-        public List<int> Numbers { get; }
+        public void AddKeys(string keys); 
+        public int ConvertToInt(); //to do abstraktionerna ska inte vara beroende av detaljer om vi vill skapa andra sätt att konvertera på t.ex. genom ett api.
+
+    } 
+   public class RomanIntConverter  //todo skapa abstraktion, för närvarande kan ju Convertern bara använda dictionary, tex. kanske man vill hämta svaren via ett api och ta bort ConvertToInt metoden.
+    {
+        public Dictionary<string, int> RomannumbersDict { get; }//ändra till private 
+        public List<int> Numbers { get; }  // ändra till private ? 
 
         public RomanIntConverter()
         {
