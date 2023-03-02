@@ -8,14 +8,21 @@ namespace RomerskasiffrorConverter
     {
         public void AddKeys(string keys); 
         public int ConvertToInt(); //to do abstraktionerna ska inte vara beroende av detaljer om vi vill skapa andra sätt att konvertera på t.ex. genom ett api.
+        public string GetVersion();
         public Dictionary<string, int> RomannumbersDict { get; }// to do ta bort
+
     } 
-   public class RomanIntConverter<T>: IRomanIntConverter  //todo skapa abstraktion, för närvarande kan ju Convertern bara använda dictionary, tex. kanske man vill hämta svaren via ett api och ta bort ConvertToInt metoden.
+   public class RomanIntConverter: IRomanIntConverter  //todo skapa abstraktion, för närvarande kan ju Convertern bara använda dictionary, tex. kanske man vill hämta svaren via ett api och ta bort ConvertToInt metoden.
     {
         public Dictionary<string, int> RomannumbersDict { get; }//ändra till private 
         public List<int> Numbers { get; }  // ändra till private ? 
+        private double version = 1.0;
+        public double Version {
+            get { return version; } 
+        }
 
-        public T version;
+        public string GetVersion() => $"RomanIntConverter v.{Version}";
+        
 
         public RomanIntConverter()
         {
