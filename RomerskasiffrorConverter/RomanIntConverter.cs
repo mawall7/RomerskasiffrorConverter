@@ -8,7 +8,8 @@ namespace RomerskasiffrorConverter
     {
         public void AddKeys(string keys); 
         public int ConvertToInt(); //to do abstraktionerna ska inte vara beroende av detaljer om vi vill skapa andra sätt att konvertera på t.ex. genom ett api.
-        public string GetVersion();
+        public void GetVersion();
+        public void GetDate();
         public Dictionary<string, int> RomannumbersDict { get; }// to do ta bort
 
     } 
@@ -21,7 +22,9 @@ namespace RomerskasiffrorConverter
             get { return version; } 
         }
 
-        public string GetVersion() => $"RomanIntConverter v.{Version}";
+        public void GetVersion() => Console.WriteLine($"RomanIntConverter v.{Version}");
+
+        public void GetDate() => Console.WriteLine("-2023-03-02");
         
 
         public RomanIntConverter()

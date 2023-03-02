@@ -11,7 +11,7 @@ namespace RomerskasiffrorConverter
     using ExtensionMethods;
     public class Program
     {
-        public delegate string GetStartinfo();
+        public delegate void GetStartinfodelegate();
         public static void Main(string[] args)
         {
             
@@ -23,8 +23,12 @@ namespace RomerskasiffrorConverter
 
             //List<int> numbers = new List<int>();
             //Console.WriteLine(newConverter.GetVersion());
-            GetStartinfo del = new GetStartinfo(newConverter.GetVersion);
-            Console.WriteLine(del.Invoke());
+            GetStartinfodelegate del = new GetStartinfodelegate(newConverter.GetVersion);
+            del = del + newConverter.GetDate; //obs en multikast delegate där två metoder returnerar void. string returnerar bara den sista metodens string.
+            //GetStartinfodelegate del2 = new GetStartinfodelegate(newConverter.GetDate);
+            //GetStartinfodelegate del3 = del + del2 ;
+            
+            del.Invoke();
             //Console.Write("Romerska siffror-Converter 2023\n");
             Console.Write("Skriv ett romerskt tal: ");
             
