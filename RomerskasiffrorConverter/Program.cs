@@ -11,7 +11,7 @@ namespace RomerskasiffrorConverter
     using ExtensionMethods;
     public class Program
     {
-        //public delegate void RomNumberC();
+        public delegate string GetStartinfo();
         public static void Main(string[] args)
         {
             
@@ -22,7 +22,9 @@ namespace RomerskasiffrorConverter
             IRomanIntConverter newConverter = new RomanIntConverter();
 
             //List<int> numbers = new List<int>();
-            Console.WriteLine(newConverter.GetVersion());
+            //Console.WriteLine(newConverter.GetVersion());
+            GetStartinfo del = new GetStartinfo(newConverter.GetVersion);
+            Console.WriteLine(del.Invoke());
             //Console.Write("Romerska siffror-Converter 2023\n");
             Console.Write("Skriv ett romerskt tal: ");
             
