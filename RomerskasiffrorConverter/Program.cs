@@ -19,7 +19,7 @@ namespace RomerskasiffrorConverter
 
 
             //Handler newHandler = new Handler();
-            RomanIntConverter newConverter = new RomanIntConverter();
+            IRomanIntConverter newConverter = new RomanIntConverter();
             
             //List<int> numbers = new List<int>();
            
