@@ -5,7 +5,7 @@ using System.Text;
 using ExtensionMethods;
 
 
-//Romerska siffror converter. AddKeys() populerar en lista med de numeriska värdena för de romerska siffrorna som översätts av en dictionary som är private i klasssen Handler. Compared results() metoden sköter logiken (för addition eller subtraktion).  
+//Romerska siffror converter. AddKeys() populerar en lista med de numeriska värdena för de romerska siffrorna som översätts av en dictionary som är private i klasssen Handler. Compared results() metoden sköter logiken (för addition eller subtraktion).  //delegater användes bara för att testa, inte för att det är speciellt användbart i det här projektet. 
 namespace RomerskasiffrorConverter
 {
     using ExtensionMethods;

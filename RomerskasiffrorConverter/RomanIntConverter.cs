@@ -17,8 +17,8 @@ namespace RomerskasiffrorConverter
     {
         public Dictionary<string, int> RomannumbersDict { get; }//ändra till private 
         public List<int> Numbers { get; }  // ändra till private ? 
-        private double version = 1.0;
-        public double Version {
+        private static double version = 1.0;
+        public static double Version {
             get { return version; } 
         }
 
